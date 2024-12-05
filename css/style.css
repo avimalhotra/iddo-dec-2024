@@ -37,17 +37,15 @@ body{ font: 16px var(--ff);}
 .col-2{ flex-basis: 16.66%; max-width: 16.66%;}
 .col-3{ flex-basis: 25%; max-width: 25%;}
 .col-4{ flex-basis: 33.33%; max-width: 33.33%;}
-.col-5{ flex-basis: 41.66%; max-width: 41.66%;}
 .col-6{ flex-basis: 50%; max-width: 50%;}
-.col-7{ flex-basis: 58.33%; max-width: 58.33%;}
 .col-8{ flex-basis: 66.66%; max-width: 66.66%;}
 .col-9{ flex-basis: 75%; max-width: 75%;}
 .col-10{ flex-basis: 83.33%; max-width: 83.33%;}
-.col-11{ flex-basis: 91.66%; max-width: 91.66%;}
 .col-12{ flex-basis: 100%; max-width: 100%;}
 .flex{ display: flex;}
 .justify-space-bet{ justify-content: space-between;}
 .align-center{ align-items: center;}
+.img-resp{ max-width: 100%; height: auto;}
 
 
 /* layout */
@@ -63,12 +61,30 @@ nav a{ padding: 0 1rem;}
 .banner{ background: #666; color: #fff; padding: 20rem 0;}
 .banner button{ border: none; background: none; color: inherit; font-size: 10rem; margin-right: 40px; }
 .banner p{ font-size: 4rem; font-weight: 100;}
-.banner a{ color: var(--red); }
+.banner a{ color: var(--red);}
+
+
+.wrap-3{ background: var(--red); color: #fff; padding: 50px 0;}
+.grid{ display: grid; grid-template-columns: repeat(2, 1fr); gap: 4rem 0;}
+h2{ font-size: 72px; line-height: 60px; border-bottom: 10px solid; margin-bottom: 2rem;}
+.circle{ width: 100px; height: 100px; border: 2px solid; flex-shrink: 0; border-radius: 50%; display: grid; place-items: center; font-size: 36px; margin-right: 2rem; }
+.wrap-3 h3{ font-size: 16px; line-height: 30px;}
+.wrap-3 p{ font-size: 14px; font-weight: 100; line-height: 22px;}
+
+
+.wrap-4{ background: #fff; color: var(--red); font-size: 36px; text-align: center; line-height: 10rem;}
 
 
 
-
-
+.wrap-5{ background: #ebebeb; color: #363636; padding: 100px 0 140px;}
+.wrap-5 .btn{ margin: 0 10px 4rem 0;}
+.wrap-5 .btn.active{ background: var(--red); color: #fff; border-color: var(--red);}
+.work{ position: relative; margin-bottom: 2rem; overflow: hidden; }
+.details{ position: absolute; left: 0; bottom: -50px; right: 0; background: #fff; text-align: center; padding: 1rem 0; transition: 400ms; opacity: 0;  }
+.details h3{ font-size: 18px; color: var(--red); line-height: 40px; }
+.details p{ font: 100 14px var(--ff); line-height: 2rem;}
+.work:hover .details{ opacity: 1; bottom: 0;}
+.more{ font-size: 36px; border: none; background: none; color: var(--red);}
 
 
 
@@ -76,20 +92,15 @@ nav a{ padding: 0 1rem;}
 
 @media screen and (max-width:1220px){
     html{ font-size: 14px;}
+    h2{ font-size: 62px;}
 }
 
 @media screen and (max-width:980px){
-.col-t-1{ flex-basis: 8.33%; max-width: 8.33%;}
-.col-t-2{ flex-basis: 16.66%; max-width: 16.66%;}
 .col-t-3{ flex-basis: 25%; max-width: 25%;}
 .col-t-4{ flex-basis: 33.33%; max-width: 33.33%;}
-.col-t-5{ flex-basis: 41.66%; max-width: 41.66%;}
 .col-t-6{ flex-basis: 50%; max-width: 50%;}
-.col-t-7{ flex-basis: 58.33%; max-width: 58.33%;}
 .col-t-8{ flex-basis: 66.66%; max-width: 66.66%;}
 .col-t-9{ flex-basis: 75%; max-width: 75%;}
-.col-t-10{ flex-basis: 83.33%; max-width: 83.33%;}
-.col-t-11{ flex-basis: 91.66%; max-width: 91.66%;}
 .col-t-12{ flex-basis: 100%; max-width: 100%;}
 .banner p{ font-size: 3rem;}
 }
@@ -98,21 +109,14 @@ nav a{ padding: 0 1rem;}
     html{ font-size: 13px;}
     header .flex{ display: none;}
     .col-m-6{ flex-basis: 50%; max-width: 50%;}
+    .wrap-5 .btn{ margin-right: 6px; }
 }
 
 @media screen and (max-width:460px){
-.col-p-1{ flex-basis: 8.33%; max-width: 8.33%;}
-.col-p-2{ flex-basis: 16.66%; max-width: 16.66%;}
-.col-p-3{ flex-basis: 25%; max-width: 25%;}
 .col-p-4{ flex-basis: 33.33%; max-width: 33.33%;}
-.col-p-5{ flex-basis: 41.66%; max-width: 41.66%;}
 .col-p-6{ flex-basis: 50%; max-width: 50%;}
-.col-p-7{ flex-basis: 58.33%; max-width: 58.33%;}
-.col-p-8{ flex-basis: 66.66%; max-width: 66.66%;}
-.col-p-9{ flex-basis: 75%; max-width: 75%;}
-.col-p-10{ flex-basis: 83.33%; max-width: 83.33%;}
-.col-p-11{ flex-basis: 91.66%; max-width: 91.66%;}
 .col-p-12{ flex-basis: 100%; max-width: 100%;}
 .banner .flex{ flex-flow: column;}
 .banner button{ margin: 0 0 2rem 0;}
+.grid{ grid-template-columns: repeat(1, 1fr); }
 }
