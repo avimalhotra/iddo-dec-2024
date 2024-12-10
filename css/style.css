@@ -4,7 +4,7 @@ ul{ list-style: none; padding: 0;}
 img{ vertical-align: bottom;}
 button{ cursor: pointer; padding: 0; font: 16px var(--ff);}
 input,select{ font-family: var(--ff);}
-label{ display: inline-block;}
+label{ display:block;}
 
 @font-face {
     font-family: proxima;
@@ -25,7 +25,7 @@ label{ display: inline-block;}
     font-display: swap;
 }
 
-html{ font-size: 15px; --red:#ca3c3c;--ff:proxima, sans-serif }
+html{ font-size: 15px; --red:#ca3c3c;--ff:proxima, sans-serif; scroll-behavior: smooth; scroll-padding-top: 80px; }
 
 body{ font: 16px var(--ff);}
 
@@ -49,7 +49,7 @@ body{ font: 16px var(--ff);}
 
 
 /* layout */
-header{ background: #000; color: #fff;}
+header{ background: #000; color: #fff; position: sticky; top: 0; z-index: 1;}
 header a{ display: inline-block; color: inherit; line-height: 80px;}
 header h1{ font-size: 2rem;}
 nav{ margin-left: -20px;}
@@ -121,16 +121,45 @@ h2{ font-size: 72px; line-height: 60px; border-bottom: 10px solid; margin-bottom
 
 
 .wrap-9{ background: #fff; color: #363636; padding: 100px 0}
-canvas{ background: #ddd; margin-top: 50px;}
+canvas{ background: #ddd; margin-top: 50px; max-width: 100%;}
 .accordion{margin-top: 50px;}
+.accordion li{ margin-bottom: 10px;}
+.accordion a{ color: #898989; display: block; padding: 1rem; border: 1px solid #ebebeb; border-radius: 10px;}
+.accordion span.fa{ margin-right: 18px;}
+.accordion p{ display: none; font: 100 14px/22px var(--ff); color: #363636; margin: 20px; }
+.accordion a.active{ color: var(--red);}
+.accordion a::after{ content: '+'; float: right;}
+.accordion a.active::after{ content: '-';}
+.accordion li:first-child p{ display: block;}
 
 
+.wrap-10{ background: var(--red); padding: 23px 0 22px; }
+.wrap-10 input{ height: 35px; width: 370px; background: none; border: none; color: #fff; font: 100 36px var(--ff)}
+.wrap-10 input::placeholder{ color: #fff;}
+.wrap-10 button{ background: #fff;}
 
 
+.wrap-11{ background: #7f7f7f; padding: 28px 0 0 0;}
+.box{ background: #a6a6a6; color: #fff; text-align: center; line-height: 95px; margin-bottom: 27px;}
 
 
+.wrap-12{ background: #ebebeb; color: #363636; padding: 100px 0 142px;}
+address{ color: #898989; line-height: 30px; letter-spacing: -1px; font-style: normal; }
+address a{ color: inherit;}
+.social2{ margin: 25px 0; }
+.social2 li{ margin-right: 10px;}
+.social2 a{ color: var(--red);}
+.wrap-12 label{ border: 2px solid #363636; padding: 1rem; margin: 1rem 0; font-weight: bold; }
+.wrap-12 input{ border: none; background: none;}
+.wrap-12 textarea{ border: none; background: none; vertical-align: top; resize: none; height: 48px;}
+.wrap-12 button{ margin: 1rem 0; width: 100%; height: 80px; background: #fff; border: none; border-radius: 10px; color: var(--red);}
+
+.wrap-12 :is(input,textarea):focus{ outline: none;}
+.wrap-12 label:focus-within{ border-color: var(--red); color: var(--red);}
 
 
+.wrap-13{ background: #363636; text-align: center; padding: 50px 0; color: #fff; }
+.wrap-13 button{ color: var(--red); border: none; background: none; font-size: 36px;}
 
 /* responsive */
 
@@ -152,6 +181,8 @@ canvas{ background: #ddd; margin-top: 50px;}
 .social ul{ flex-flow: column; }
 .social li{ margin-right: 0; margin-bottom: 10px;}
 .wrap-8 p{ font-size: 50px;}
+.col-t-auto{ flex: 1 0 20%; min-width: 20%;}
+.col-t-hide{ display: none;}
 }
 
 @media screen and (max-width:767px){
@@ -169,4 +200,6 @@ canvas{ background: #ddd; margin-top: 50px;}
 .banner .flex{ flex-flow: column;}
 .banner button{ margin: 0 0 2rem 0;}
 .grid{ grid-template-columns: repeat(1, 1fr); }
+.wrap-10 input{ width: 235px;  font-size: 24px;}
+.col-t-auto{ flex: 1 0 50%; min-width: 50%;}
 }
