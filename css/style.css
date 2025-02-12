@@ -56,6 +56,11 @@ nav{ margin-left: -20px;}
 nav li{ margin: 0 5px;}
 nav a{ padding: 0 1rem;}
 .btn{ background: none; border: 2px solid; width: 90px; height: 35px; border-radius: 10px; color: var(--red);}
+.menu{ display: none;}
+.menu span{ display: block; height: 2px; background: var(--red); margin: 5px 10px; transition: 400ms; transform-origin: right center;}
+.menu.active span:nth-child(1){ transform: rotate(-12deg); }
+.menu.active span:nth-child(2){ opacity: 0; }
+.menu.active span:nth-child(3){ transform: rotate(12deg);}
 
 
 .banner{ background: #666; color: #fff; padding: 20rem 0;}
@@ -85,6 +90,7 @@ h2{ font-size: 72px; line-height: 60px; border-bottom: 10px solid; margin-bottom
 .details p{ font: 100 14px var(--ff); line-height: 2rem;}
 .work:hover .details{ opacity: 1; bottom: 0;}
 .more{ font-size: 36px; border: none; background: none; color: var(--red);}
+.all:nth-child(7),.all:nth-child(8),.all:nth-child(9){ display: none;}
 
 
 .wrap-6{ background: #666; color: #fff; padding: 4rem 0 2rem; }
@@ -109,6 +115,7 @@ h2{ font-size: 72px; line-height: 60px; border-bottom: 10px solid; margin-bottom
 .gap h3{ color: var(--red); font-size: 18px; text-transform: uppercase; }
 .gap small{ font: 100 14px/2rem var(--ff); color: #898989;}
 .gap p{ font: 100 14px/22px var(--ff); color: #363636; margin-top: 2rem;}
+.wrap-7 :is(:nth-child(4),:nth-child(5),:nth-child(6)){ display: none; }
 
 
 
@@ -116,7 +123,6 @@ h2{ font-size: 72px; line-height: 60px; border-bottom: 10px solid; margin-bottom
 .wrap-8 span.fa{ font-size: 72px;}
 .wrap-8 p{ font: 100 72px var(--ff);}
 .wrap-8 b{ font-size: 18px; margin-bottom: 75px; display: inline-block;}
-
 
 
 
@@ -129,8 +135,9 @@ canvas{ background: #ddd; margin-top: 50px; max-width: 100%;}
 .accordion p{ display: none; font: 100 14px/22px var(--ff); color: #363636; margin: 20px; }
 .accordion a.active{ color: var(--red);}
 .accordion a::after{ content: '+'; float: right;}
-.accordion a.active::after{ content: '-';}
+.accordion a.active::after{ content: '—';}
 .accordion li:first-child p{ display: block;}
+
 
 
 .wrap-10{ background: var(--red); padding: 23px 0 22px; }
@@ -187,10 +194,13 @@ address a{ color: inherit;}
 
 @media screen and (max-width:767px){
     html{ font-size: 13px;}
-    header .flex{ display: none;}
     .col-m-6{ flex-basis: 50%; max-width: 50%;}
     .wrap-5 .btn{ margin-right: 6px; }
-    
+    .collapse{ display: none; position: absolute; background: #000; left: 0; right: 0; padding: 1rem; top: 80px;}
+    .menu{ display: block; margin-top: 22.5px; float: right;}
+    .collapse .flex, .collapse ul{ flex-flow: column; align-items: flex-end; }
+    nav{ width: 100%; text-align: right;}
+    nav a{ line-height: 40px;}
 }
 
 @media screen and (max-width:460px){
